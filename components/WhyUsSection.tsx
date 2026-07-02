@@ -12,12 +12,12 @@ const reasons = [
   {
     icon: Clock,
     title: 'Same-Day Emergency Response',
-    desc: 'Plumbing emergencies don\'t wait — neither do we. We dispatch fast, day or night, 365 days a year.',
+    desc: "Plumbing emergencies don't wait — neither do we. We dispatch fast, day or night, 365 days a year.",
   },
   {
     icon: Star,
     title: 'Transparent, Upfront Pricing',
-    desc: 'You\'ll always know the cost before any work begins. No surprise charges, no hidden fees — ever.',
+    desc: "You'll always know the cost before any work begins. No surprise charges, no hidden fees — ever.",
   },
   {
     icon: Wrench,
@@ -32,9 +32,29 @@ const reasons = [
   {
     icon: Users,
     title: 'Locally Rooted, Community Driven',
-    desc: 'We\'re proud North Texans serving our neighbors. Your home is treated with the same care as our own.',
+    desc: "We're proud North Texans serving our neighbors. Your home is treated with the same care as our own.",
   },
 ]
+
+/*
+ * Red diagonal gradient icon container.
+ * Gradient direction: top-right corner is darker red (#8b0a1e),
+ * bottom-left corner is lighter red (#e8204a).
+ * All icons share the exact same gradient — white icon on top for contrast.
+ */
+function RedGradientIcon({ Icon }: { Icon: React.ElementType }) {
+  return (
+    <div
+      className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center"
+      style={{
+        background: 'linear-gradient(225deg, #8b0a1e 0%, #c8102e 50%, #e8204a 100%)',
+      }}
+      aria-hidden="true"
+    >
+      <Icon className="w-5 h-5 text-white" aria-hidden="true" />
+    </div>
+  )
+}
 
 export default function WhyUsSection() {
   return (
@@ -70,9 +90,7 @@ export default function WhyUsSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {reasons.map((r) => (
                 <div key={r.title} className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-[#c8102e] rounded-sm flex items-center justify-center">
-                    <r.icon className="w-5 h-5 text-white" aria-hidden="true" />
-                  </div>
+                  <RedGradientIcon Icon={r.icon} />
                   <div>
                     <h3 className="text-[#0f2044] font-bold text-base mb-1">{r.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{r.desc}</p>

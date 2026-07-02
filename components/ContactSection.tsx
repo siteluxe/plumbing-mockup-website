@@ -15,6 +15,26 @@ const problemOptions = [
   'Other / Not Listed',
 ]
 
+/* Red gradient icon wrapper — same 135deg pattern as Why Us */
+function RedGradientIcon({ icon: Icon, isPhone = false }: { icon: React.ElementType; isPhone?: boolean }) {
+  if (isPhone) {
+    return (
+      <div className="w-10 h-10 bg-[#c8102e] rounded-sm flex items-center justify-center flex-shrink-0">
+        <Icon className="w-5 h-5 text-white" aria-hidden="true" />
+      </div>
+    )
+  }
+  return (
+    <div
+      className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0"
+      style={{ background: 'linear-gradient(225deg, #8b0a1e 0%, #c8102e 50%, #e8204a 100%)' }}
+      aria-hidden="true"
+    >
+      <Icon className="w-5 h-5 text-white" aria-hidden="true" />
+    </div>
+  )
+}
+
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({
@@ -60,9 +80,14 @@ export default function ContactSection() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
-          {/* Left: Info */}
+          {/* Left: Info card with blue glow */}
           <div className="w-full lg:w-5/12 flex-shrink-0">
-            <div className="bg-[#0f2044] rounded-sm p-8 h-full">
+            <div
+              className="bg-[#0f2044] rounded-sm p-8 h-full"
+              style={{
+                boxShadow: '0 4px 32px rgba(15, 32, 68, 0.35), 0 0 40px rgba(26, 90, 200, 0.18)',
+              }}
+            >
               <h3 className="text-white font-black text-2xl uppercase mb-2">Vanguard Plumbing</h3>
               <p className="text-gray-300 text-sm leading-relaxed mb-8">
                 Serving Plano, TX and all surrounding counties with fast, reliable plumbing services.
@@ -71,9 +96,8 @@ export default function ContactSection() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#c8102e] rounded-sm flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-white" aria-hidden="true" />
-                  </div>
+                  {/* Phone icon is a call icon — keep solid red per user instructions */}
+                  <RedGradientIcon icon={Phone} isPhone />
                   <div>
                     <p className="text-gray-400 text-xs uppercase tracking-widest mb-1">Phone</p>
                     <a
@@ -86,9 +110,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#c8102e] rounded-sm flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-5 h-5 text-white" aria-hidden="true" />
-                  </div>
+                  <RedGradientIcon icon={Clock} />
                   <div>
                     <p className="text-gray-400 text-xs uppercase tracking-widest mb-1">Service Hours</p>
                     <p className="text-white font-bold text-lg">24 Hours a Day, 7 Days a Week</p>
@@ -96,9 +118,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#c8102e] rounded-sm flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-white" aria-hidden="true" />
-                  </div>
+                  <RedGradientIcon icon={MapPin} />
                   <div>
                     <p className="text-gray-400 text-xs uppercase tracking-widest mb-1">Service Area</p>
                     <p className="text-white font-bold text-lg leading-snug">
@@ -126,8 +146,13 @@ export default function ContactSection() {
                   .
                 </p>
                 <button
-                  onClick={() => { setSubmitted(false); setForm({ name: '', phone: '', address: '', problem: '', message: '' }) }}
-                  className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-6 py-3 rounded-sm hover:bg-[#a00e25] transition-colors"
+                  onClick={() => {
+                    setSubmitted(false)
+                    setForm({ name: '', phone: '', address: '', problem: '', message: '' })
+                  }}
+                  className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-6 py-3 rounded-sm
+                    shadow-[0_0_14px_rgba(200,16,46,0.4)] hover:bg-[#a00e25] hover:shadow-[0_0_24px_rgba(200,16,46,0.6)]
+                    hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
                 >
                   Submit Another Request
                 </button>
@@ -218,7 +243,9 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
-                  className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:bg-[#a00e25] transition-colors w-full sm:w-auto"
+                  className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm
+                    shadow-[0_0_14px_rgba(200,16,46,0.4)] hover:bg-[#a00e25] hover:shadow-[0_0_24px_rgba(200,16,46,0.6)]
+                    hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 w-full sm:w-auto"
                   aria-label="Submit contact form"
                 >
                   Submit Request
@@ -242,7 +269,9 @@ export default function ContactSection() {
               const el = document.querySelector('#contact form')
               if (el) el.scrollIntoView({ behavior: 'smooth' })
             }}
-            className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-sm hover:bg-[#a00e25] transition-colors"
+            className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-10 py-4 rounded-sm
+              shadow-[0_0_14px_rgba(200,16,46,0.4)] hover:bg-[#a00e25] hover:shadow-[0_0_24px_rgba(200,16,46,0.6)]
+              hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
             aria-label="Book a plumbing appointment"
           >
             Book Now

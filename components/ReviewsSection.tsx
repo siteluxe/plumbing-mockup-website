@@ -15,7 +15,7 @@ const reviews = [
     name: 'Sarah T.',
     location: 'McKinney, TX',
     rating: 5,
-    text: 'I called at 11 PM for a water heater emergency and they showed up within 45 minutes. The technician was polite, explained everything clearly, and had our hot water running again by midnight. I wouldn\'t call anyone else for plumbing in Collin County.',
+    text: "I called at 11 PM for a water heater emergency and they showed up within 45 minutes. The technician was polite, explained everything clearly, and had our hot water running again by midnight. I wouldn't call anyone else for plumbing in Collin County.",
   },
   {
     initials: 'DJ',
@@ -68,7 +68,9 @@ export default function ReviewsSection() {
           {reviews.map((review) => (
             <article
               key={review.name}
-              className="bg-white rounded-sm shadow-sm border border-gray-100 p-6 flex flex-col gap-4"
+              className="bg-white rounded-sm border border-gray-100 p-6 flex flex-col gap-4
+                shadow-[0_2px_12px_rgba(15,32,68,0.08)] hover:shadow-[0_8px_28px_rgba(15,32,68,0.15)]
+                hover:-translate-y-1.5 transition-all duration-300 ease-out"
             >
               <StarRating count={review.rating} />
               <blockquote>

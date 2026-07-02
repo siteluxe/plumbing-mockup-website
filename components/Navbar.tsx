@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-white transition-shadow duration-200 ${
+      className={`w-full bg-white transition-shadow duration-300 ${
         scrolled ? 'shadow-md' : 'shadow-sm'
       }`}
     >
@@ -92,7 +92,7 @@ export default function Navbar() {
             </a>
             <button
               onClick={handleBookNow}
-              className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-6 py-3 rounded-sm hover:bg-[#a00e25] transition-colors"
+              className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-6 py-3 rounded-sm hover:bg-[#a00e25] hover:shadow-[0_0_20px_rgba(200,16,46,0.55)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-[0_0_12px_rgba(200,16,46,0.35)]"
               aria-label="Book a plumbing appointment"
             >
               Book Now
@@ -103,7 +103,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={handleBookNow}
-              className="bg-[#c8102e] text-white font-bold uppercase tracking-wider text-xs px-4 py-2.5 rounded-sm hover:bg-[#a00e25] transition-colors"
+              className="bg-[#c8102e] text-white font-bold uppercase tracking-wider text-xs px-4 py-2.5 rounded-sm hover:bg-[#a00e25] hover:shadow-[0_0_18px_rgba(200,16,46,0.55)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-[0_0_10px_rgba(200,16,46,0.3)]"
               aria-label="Book now"
             >
               Book Now

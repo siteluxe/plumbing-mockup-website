@@ -35,6 +35,26 @@ const services = [
   },
 ]
 
+/*
+ * Blue diagonal gradient icon container.
+ * Gradient direction: top-right corner is darker navy (#0a1830),
+ * bottom-left corner is lighter blue (#1e4fa0).
+ * All icons share the exact same gradient — white icon on top for contrast.
+ */
+function BlueGradientIcon({ Icon }: { Icon: React.ElementType }) {
+  return (
+    <div
+      className="w-12 h-12 rounded-sm flex items-center justify-center flex-shrink-0"
+      style={{
+        background: 'linear-gradient(225deg, #0a1830 0%, #0f2044 50%, #1e4fa0 100%)',
+      }}
+      aria-hidden="true"
+    >
+      <Icon className="w-6 h-6 text-white" aria-hidden="true" />
+    </div>
+  )
+}
+
 export default function ServicesSection() {
   return (
     <section
@@ -64,12 +84,12 @@ export default function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-sm shadow-sm border border-gray-100 p-7 flex flex-col gap-4 hover:shadow-md transition-shadow duration-200"
+              className="bg-white rounded-sm border border-gray-100 p-7 flex flex-col gap-4 cursor-default
+                shadow-[0_2px_12px_rgba(15,32,68,0.08)] hover:shadow-[0_8px_28px_rgba(15,32,68,0.16)]
+                hover:-translate-y-1.5 transition-all duration-300 ease-out"
               aria-label={service.title}
             >
-              <div className="w-12 h-12 bg-[#0f2044] rounded-sm flex items-center justify-center flex-shrink-0">
-                <service.icon className="w-6 h-6 text-white" aria-hidden="true" />
-              </div>
+              <BlueGradientIcon Icon={service.icon} />
               <div>
                 <h3 className="text-[#0f2044] font-black text-lg uppercase mb-2">{service.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>

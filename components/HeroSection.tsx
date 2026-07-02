@@ -37,7 +37,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <button
               onClick={handleBookNow}
-              className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:bg-[#a00e25] transition-colors w-full sm:w-auto text-center"
+              className="bg-[#c8102e] text-white font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:bg-[#a00e25] hover:shadow-[0_0_24px_rgba(200,16,46,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-[0_0_14px_rgba(200,16,46,0.4)] w-full sm:w-auto text-center"
               aria-label="Book a plumbing appointment"
             >
               Book Now
