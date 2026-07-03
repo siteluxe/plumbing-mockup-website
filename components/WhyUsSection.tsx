@@ -46,7 +46,7 @@ function OrangeGradientIcon({ Icon }: { Icon: React.ElementType }) {
     <div
       className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center"
       style={{
-        background: 'linear-gradient(225deg, #8c3d17 0%, #eb7b46 50%, #f0a57a 100%)',
+        background: 'linear-gradient(225deg, #b35820 0%, #E67527 55%, #f09050 100%)',
       }}
       aria-hidden="true"
     >
@@ -75,8 +75,8 @@ export default function WhyUsSection() {
 
           {/* Right: Content */}
           <div className="flex-1">
-            <p className="text-[#eb7b46] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
-              <span className="inline-block w-5 h-0.5 bg-[#eb7b46]" aria-hidden="true" />
+            <p className="text-[#E67527] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
+              <span className="inline-block w-5 h-0.5 bg-[#E67527]" aria-hidden="true" />
               Why Choose Us
             </p>
             <h2 className="text-[#0f2044] font-black text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight mb-4 text-balance">

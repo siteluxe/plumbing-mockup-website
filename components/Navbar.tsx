@@ -74,7 +74,7 @@ export default function Navbar() {
               <span className="block text-[#0f2044] font-black text-lg tracking-tight uppercase leading-none">
                 VANGUARD
               </span>
-              <span className="block text-[#eb7b46] font-black text-lg tracking-tight uppercase leading-none">
+              <span className="block text-[#E67527] font-black text-lg tracking-tight uppercase leading-none">
                 PLUMBING
               </span>
             </div>
@@ -87,7 +87,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
-                className="text-[#0f2044] font-semibold text-sm tracking-wide uppercase hover:text-[#eb7b46] transition-colors"
+                className="text-[#0f2044] font-semibold text-sm tracking-wide uppercase hover:text-[#E67527] transition-colors"
               >
                 {link.label}
               </a>
@@ -98,7 +98,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="tel:5554082930"
-              className="flex items-center gap-2 text-[#0f2044] font-bold text-sm hover:text-[#eb7b46] transition-colors"
+              className="flex items-center gap-2 text-[#0f2044] font-bold text-sm hover:text-[#E67527] transition-colors"
               aria-label="Call (555) 408-2930"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
@@ -106,9 +106,9 @@ export default function Navbar() {
             </a>
             <button
               onClick={handleBookNow}
-              className="bg-[#eb7b46] text-white font-bold uppercase tracking-widest text-sm px-6 py-3 rounded-sm
-                shadow-[0_0_12px_rgba(235,123,70,0.4)] hover:bg-[#8c3d17]
-                hover:shadow-[0_0_22px_rgba(235,123,70,0.65)] hover:-translate-y-0.5
+              className="bg-[#E67527] text-white font-bold uppercase tracking-widest text-sm px-6 py-3 rounded-sm
+                shadow-[0_0_12px_rgba(230,117,39,0.4)] hover:bg-[#7a3010]
+                hover:shadow-[0_0_22px_rgba(230,117,39,0.65)] hover:-translate-y-0.5
                 active:translate-y-0 transition-all duration-200"
               aria-label="Book a plumbing appointment"
             >
@@ -120,9 +120,9 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={handleBookNow}
-              className="bg-[#eb7b46] text-white font-bold uppercase tracking-wider text-xs px-4 py-2.5 rounded-sm
-                shadow-[0_0_10px_rgba(235,123,70,0.35)] hover:bg-[#8c3d17]
-                hover:shadow-[0_0_18px_rgba(235,123,70,0.6)] hover:-translate-y-0.5
+              className="bg-[#E67527] text-white font-bold uppercase tracking-wider text-xs px-4 py-2.5 rounded-sm
+                shadow-[0_0_10px_rgba(230,117,39,0.35)] hover:bg-[#7a3010]
+                hover:shadow-[0_0_18px_rgba(230,117,39,0.6)] hover:-translate-y-0.5
                 active:translate-y-0 transition-all duration-200"
               aria-label="Book now"
             >
@@ -149,14 +149,14 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
-                className="text-[#0f2044] font-semibold text-base py-3 px-2 border-b border-gray-100 uppercase tracking-wide hover:text-[#eb7b46] transition-colors"
+                className="text-[#0f2044] font-semibold text-base py-3 px-2 border-b border-gray-100 uppercase tracking-wide hover:text-[#E67527] transition-colors"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="tel:5554082930"
-              className="flex items-center gap-2 text-[#0f2044] font-bold text-base py-3 px-2 hover:text-[#eb7b46] transition-colors"
+              className="flex items-center gap-2 text-[#0f2044] font-bold text-base py-3 px-2 hover:text-[#E67527] transition-colors"
               aria-label="Call (555) 408-2930"
               onClick={() => setMobileOpen(false)}
             >

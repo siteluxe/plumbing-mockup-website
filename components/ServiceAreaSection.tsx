@@ -53,8 +53,8 @@ export default function ServiceAreaSection() {
 
           {/* Right: Content */}
           <div className="flex-1">
-            <p className="text-[#eb7b46] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
-              <span className="inline-block w-5 h-0.5 bg-[#eb7b46]" aria-hidden="true" />
+            <p className="text-[#E67527] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
+              <span className="inline-block w-5 h-0.5 bg-[#E67527]" aria-hidden="true" />
               Our Service Area
             </p>
             <h2 className="text-[#0f2044] font-black text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight mb-4 text-balance">
