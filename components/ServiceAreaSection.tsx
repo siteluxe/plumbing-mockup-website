@@ -53,8 +53,8 @@ export default function ServiceAreaSection() {
 
           {/* Right: Content */}
           <div className="flex-1">
-            <p className="text-[#1B4332] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
-              <span className="inline-block w-5 h-0.5 bg-[#1B4332]" aria-hidden="true" />
+            <p className="text-[#eb7b46] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
+              <span className="inline-block w-5 h-0.5 bg-[#eb7b46]" aria-hidden="true" />
               Our Service Area
             </p>
             <h2 className="text-[#0f2044] font-black text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight mb-4 text-balance">
@@ -72,13 +72,13 @@ export default function ServiceAreaSection() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
               {counties.map((county) => (
                 <div key={county.name}>
-                  <h3 className="text-[#0f2044] font-black text-lg mb-3 border-b-2 border-[#1B4332] pb-1">
+                  <h3 className="text-[#0f2044] font-black text-lg mb-3 border-b-2 border-[#eb7b46] pb-1">
                     {county.name}
                   </h3>
                   <ul className="space-y-2">
                     {county.cities.map((city) => (
                       <li key={city} className="flex items-center gap-2 text-gray-700 text-sm font-medium">
-                        <MapPin className="w-4 h-4 text-[#1B4332] flex-shrink-0" aria-hidden="true" />
+                        <MapPin className="w-4 h-4 text-[#eb7b46] flex-shrink-0" aria-hidden="true" />
                         {city}
                       </li>
                     ))}
@@ -89,9 +89,9 @@ export default function ServiceAreaSection() {
 
             <button
               onClick={handleContactScroll}
-              className="bg-[#1B4332] text-white font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm
-                shadow-[0_0_12px_rgba(27,67,50,0.35)] hover:bg-[#0d2b20]
-                hover:shadow-[0_0_22px_rgba(27,67,50,0.6)] hover:-translate-y-0.5
+              className="bg-[#eb7b46] text-white font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-sm
+                shadow-[0_0_12px_rgba(235,123,70,0.35)] hover:bg-[#8c3d17]
+                hover:shadow-[0_0_22px_rgba(235,123,70,0.6)] hover:-translate-y-0.5
                 active:translate-y-0 transition-all duration-200 inline-flex items-center gap-2"
               aria-label="View all service areas and contact us"
             >

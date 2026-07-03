@@ -49,10 +49,10 @@ export default function ReviewsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#1B4332] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
-            <span className="inline-block w-5 h-0.5 bg-[#1B4332]" aria-hidden="true" />
+          <p className="text-[#eb7b46] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
+            <span className="inline-block w-5 h-0.5 bg-[#eb7b46]" aria-hidden="true" />
             Customer Reviews
-            <span className="inline-block w-5 h-0.5 bg-[#1B4332]" aria-hidden="true" />
+            <span className="inline-block w-5 h-0.5 bg-[#eb7b46]" aria-hidden="true" />
           </p>
           <h2 className="text-[#0f2044] font-black text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight mb-4 text-balance">
             What Our Customers Are Saying
@@ -81,7 +81,7 @@ export default function ReviewsSection() {
               <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-100">
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'linear-gradient(225deg, #0d2b20 0%, #1B4332 50%, #2d6a4f 100%)' }}
+                  style={{ background: 'linear-gradient(225deg, #8c3d17 0%, #eb7b46 50%, #f0a57a 100%)' }}
                 >
                   <span className="text-white font-black text-xs">{review.initials}</span>
                 </div>

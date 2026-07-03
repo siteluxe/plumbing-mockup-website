@@ -50,7 +50,7 @@ export default function Footer() {
               </div>
               <div className="leading-tight">
                 <span className="block text-white font-black text-base tracking-tight uppercase leading-none">VANGUARD</span>
-                <span className="block text-[#1B4332] font-black text-base tracking-tight uppercase leading-none">PLUMBING</span>
+                <span className="block text-[#eb7b46] font-black text-base tracking-tight uppercase leading-none">PLUMBING</span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -68,7 +68,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); handleScrollTo(link.href) }}
-                    className="text-gray-400 hover:text-[#2d6a4f] transition-colors text-sm font-medium"
+                    className="text-gray-400 hover:text-[#f0a57a] transition-colors text-sm font-medium"
                   >
                     {link.label}
                   </a>
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-[#2d6a4f] transition-colors text-sm font-medium"
+                    className="text-gray-400 hover:text-[#f0a57a] transition-colors text-sm font-medium"
                   >
                     {link.label}
                   </Link>
@@ -92,7 +92,7 @@ export default function Footer() {
             <h3 className="text-white font-black uppercase tracking-wider text-sm mb-5">Contact</h3>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[#1B4332] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <Phone className="w-4 h-4 text-[#eb7b46] mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <a
                   href="tel:5554082930"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
@@ -102,11 +102,11 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-[#1B4332] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <Clock className="w-4 h-4 text-[#eb7b46] mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span className="text-gray-400 text-sm">24 Hours a Day, 7 Days a Week</span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#1B4332] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <MapPin className="w-4 h-4 text-[#eb7b46] mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <address className="not-italic text-gray-400 text-sm leading-relaxed">
                   4821 Haverford Drive, Suite 110<br />
                   Plano, TX 75024
@@ -124,7 +124,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-1.5">
               {['Collin County', 'Denton County', 'Dallas County'].map((c) => (
                 <li key={c} className="text-gray-400 text-sm flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1B4332] flex-shrink-0" aria-hidden="true" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#eb7b46] flex-shrink-0" aria-hidden="true" />
                   {c}
                 </li>
               ))}
