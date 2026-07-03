@@ -36,10 +36,8 @@ const services = [
 ]
 
 /*
- * Blue diagonal gradient icon container.
- * Gradient direction: top-right corner is darker navy (#0a1830),
- * bottom-left corner is lighter blue (#1e4fa0).
- * All icons share the exact same gradient — white icon on top for contrast.
+ * Blue diagonal gradient icon container — navy blue palette, unchanged from before.
+ * Gradient: top-right darker navy (#0a1830) → mid (#0f2044) → bottom-left lighter blue (#1e4fa0).
  */
 function BlueGradientIcon({ Icon }: { Icon: React.ElementType }) {
   return (
@@ -65,10 +63,10 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#c8102e] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
-            <span className="inline-block w-5 h-0.5 bg-[#c8102e]" aria-hidden="true" />
+          <p className="text-[#1B4332] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
+            <span className="inline-block w-5 h-0.5 bg-[#1B4332]" aria-hidden="true" />
             What We Offer
-            <span className="inline-block w-5 h-0.5 bg-[#c8102e]" aria-hidden="true" />
+            <span className="inline-block w-5 h-0.5 bg-[#1B4332]" aria-hidden="true" />
           </p>
           <h2 className="text-[#0f2044] font-black text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight mb-4 text-balance">
             Our Services

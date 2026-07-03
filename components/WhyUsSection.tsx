@@ -37,17 +37,16 @@ const reasons = [
 ]
 
 /*
- * Red diagonal gradient icon container.
- * Gradient direction: top-right corner is darker red (#8b0a1e),
- * bottom-left corner is lighter red (#e8204a).
+ * Green diagonal gradient icon container.
+ * Gradient: top-right darker (#0d2b20) → mid (#1B4332) → bottom-left lighter (#2d6a4f).
  * All icons share the exact same gradient — white icon on top for contrast.
  */
-function RedGradientIcon({ Icon }: { Icon: React.ElementType }) {
+function GreenGradientIcon({ Icon }: { Icon: React.ElementType }) {
   return (
     <div
       className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center"
       style={{
-        background: 'linear-gradient(225deg, #8b0a1e 0%, #c8102e 50%, #e8204a 100%)',
+        background: 'linear-gradient(225deg, #0d2b20 0%, #1B4332 50%, #2d6a4f 100%)',
       }}
       aria-hidden="true"
     >
@@ -61,12 +60,12 @@ export default function WhyUsSection() {
     <section className="w-full bg-white py-20 px-4 overflow-x-hidden" aria-label="Why choose Vanguard Plumbing">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-          {/* Left: Image */}
+          {/* Left: Image — swapped to hero-plumber.png per request */}
           <div className="w-full lg:w-5/12 flex-shrink-0">
             <div className="relative rounded-sm overflow-hidden h-80 sm:h-96 lg:h-[520px] w-full">
               <Image
-                src="/images/plumber-work.png"
-                alt="Vanguard Plumbing technician at work"
+                src="/images/hero-plumber.png"
+                alt="Vanguard Plumbing professional plumber ready to serve customers in Plano, TX"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -76,8 +75,8 @@ export default function WhyUsSection() {
 
           {/* Right: Content */}
           <div className="flex-1">
-            <p className="text-[#c8102e] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
-              <span className="inline-block w-5 h-0.5 bg-[#c8102e]" aria-hidden="true" />
+            <p className="text-[#1B4332] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
+              <span className="inline-block w-5 h-0.5 bg-[#1B4332]" aria-hidden="true" />
               Why Choose Us
             </p>
             <h2 className="text-[#0f2044] font-black text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight mb-4 text-balance">
@@ -90,7 +89,7 @@ export default function WhyUsSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {reasons.map((r) => (
                 <div key={r.title} className="flex items-start gap-4">
-                  <RedGradientIcon Icon={r.icon} />
+                  <GreenGradientIcon Icon={r.icon} />
                   <div>
                     <h3 className="text-[#0f2044] font-bold text-base mb-1">{r.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{r.desc}</p>

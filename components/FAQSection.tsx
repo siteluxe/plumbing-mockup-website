@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: 'Do you offer emergency plumbing services?',
-    a: 'Yes. Vanguard Plumbing provides 24/7 emergency plumbing service throughout Plano, TX and all surrounding counties. Whether it\'s 2 AM or a holiday weekend, our on-call technicians are ready to respond quickly to burst pipes, major leaks, sewage backups, and other urgent situations.',
+    a: "Yes. Vanguard Plumbing provides 24/7 emergency plumbing service throughout Plano, TX and all surrounding counties. Whether it's 2 AM or a holiday weekend, our on-call technicians are ready to respond quickly to burst pipes, major leaks, sewage backups, and other urgent situations.",
   },
   {
     q: 'How quickly can you get to my home?',
@@ -46,10 +46,10 @@ export default function FAQSection() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <p className="text-[#c8102e] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
-            <span className="inline-block w-5 h-0.5 bg-[#c8102e]" aria-hidden="true" />
+          <p className="text-[#1B4332] font-bold text-sm tracking-[0.2em] uppercase mb-3 flex items-center justify-center gap-2">
+            <span className="inline-block w-5 h-0.5 bg-[#1B4332]" aria-hidden="true" />
             FAQ
-            <span className="inline-block w-5 h-0.5 bg-[#c8102e]" aria-hidden="true" />
+            <span className="inline-block w-5 h-0.5 bg-[#1B4332]" aria-hidden="true" />
           </p>
           <h2 className="text-[#0f2044] font-black text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight mb-4 text-balance">
             Frequently Asked Questions
@@ -75,7 +75,7 @@ export default function FAQSection() {
               >
                 <span className="text-[#0f2044] font-bold text-base">{faq.q}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-[#c8102e] flex-shrink-0 transition-transform duration-200 ${
+                  className={`w-5 h-5 text-[#1B4332] flex-shrink-0 transition-transform duration-200 ${
                     openIndex === i ? 'rotate-180' : ''
                   }`}
                   aria-hidden="true"

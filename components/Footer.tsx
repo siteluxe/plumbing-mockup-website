@@ -17,9 +17,18 @@ const legalLinks = [
 
 export default function Footer() {
   const handleScrollTo = (href: string) => {
+    if (href === '#home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
     if (href.startsWith('#')) {
       const el = document.querySelector(href)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
+      if (el) {
+        const header = document.getElementById('site-header')
+        const offset = header ? header.offsetHeight : 88
+        const top = el.getBoundingClientRect().top + window.scrollY - offset - 8
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
     }
   }
 
@@ -41,7 +50,7 @@ export default function Footer() {
               </div>
               <div className="leading-tight">
                 <span className="block text-white font-black text-base tracking-tight uppercase leading-none">VANGUARD</span>
-                <span className="block text-[#c8102e] font-black text-base tracking-tight uppercase leading-none">PLUMBING</span>
+                <span className="block text-[#1B4332] font-black text-base tracking-tight uppercase leading-none">PLUMBING</span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -59,7 +68,7 @@ export default function Footer() {
                   <a
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); handleScrollTo(link.href) }}
-                    className="text-gray-400 hover:text-[#c8102e] transition-colors text-sm font-medium"
+                    className="text-gray-400 hover:text-[#2d6a4f] transition-colors text-sm font-medium"
                   >
                     {link.label}
                   </a>
@@ -69,7 +78,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-[#c8102e] transition-colors text-sm font-medium"
+                    className="text-gray-400 hover:text-[#2d6a4f] transition-colors text-sm font-medium"
                   >
                     {link.label}
                   </Link>
@@ -83,20 +92,21 @@ export default function Footer() {
             <h3 className="text-white font-black uppercase tracking-wider text-sm mb-5">Contact</h3>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[#c8102e] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <Phone className="w-4 h-4 text-[#1B4332] mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <a
                   href="tel:5554082930"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
+                  aria-label="Call Vanguard Plumbing at (555) 408-2930"
                 >
                   (555) 408-2930
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-[#c8102e] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <Clock className="w-4 h-4 text-[#1B4332] mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span className="text-gray-400 text-sm">24 Hours a Day, 7 Days a Week</span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#c8102e] mt-0.5 flex-shrink-0" aria-hidden="true" />
+                <MapPin className="w-4 h-4 text-[#1B4332] mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <address className="not-italic text-gray-400 text-sm leading-relaxed">
                   4821 Haverford Drive, Suite 110<br />
                   Plano, TX 75024
@@ -114,7 +124,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-1.5">
               {['Collin County', 'Denton County', 'Dallas County'].map((c) => (
                 <li key={c} className="text-gray-400 text-sm flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c8102e] flex-shrink-0" aria-hidden="true" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1B4332] flex-shrink-0" aria-hidden="true" />
                   {c}
                 </li>
               ))}
@@ -137,15 +147,16 @@ export default function Footer() {
                 </Link>
               ))}
             </div>
+            {/* SiteLuxe attribution — rel="nofollow" for SEO, same color as surrounding text */}
             <p>
-              Built by{' '}
               <a
                 href="https://siteluxe.netlify.app"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="text-gray-500 hover:text-gray-300 transition-colors"
+                aria-label="Website built by SiteLuxe"
               >
-                SiteLuxe
+                Built by SiteLuxe
               </a>
             </p>
           </div>
