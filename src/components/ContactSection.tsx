@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { Phone, Clock, MapPin, CheckCircle } from 'lucide-react'
 
@@ -15,11 +13,7 @@ const problemOptions = [
   'Other / Not Listed',
 ]
 
-/*
- * Orange diagonal gradient icon container — same pattern as WhyUs icons.
- * Gradient: top-right darker (#8c3d17) → mid (#eb7b46) → bottom-left lighter (#f0a57a).
- */
-function OrangeGradientIcon({ icon: Icon }: { icon: React.ElementType }) {
+function OrangeGradientIcon({ icon: Icon }: { icon: React.ComponentType<{ className?: string }> }) {
   return (
     <div
       className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0"

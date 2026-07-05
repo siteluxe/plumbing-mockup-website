@@ -1,7 +1,4 @@
-'use client'
-
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { Menu, X, Phone } from 'lucide-react'
 
 const navLinks = [
@@ -61,15 +58,11 @@ export default function Navbar() {
             className="flex-shrink-0 flex items-center gap-2"
             aria-label="Vanguard Plumbing home"
           >
-            <div className="relative w-14 h-14">
-              <Image
-                src="/images/vanguard-logo.png"
-                alt="Vanguard Plumbing logo"
-                fill
-                className="object-contain"
-                sizes="56px"
-              />
-            </div>
+            <img
+              src="/images/vanguard-logo.png"
+              alt="Vanguard Plumbing logo"
+              className="w-14 h-14 object-contain"
+            />
             <div className="leading-tight">
               <span className="block text-[#0f2044] font-black text-lg tracking-tight uppercase leading-none">
                 VANGUARD

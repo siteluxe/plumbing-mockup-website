@@ -1,5 +1,3 @@
-'use client'
-
 import { Droplets, Wrench, Thermometer, FlaskConical, AlertTriangle, ShowerHead } from 'lucide-react'
 
 const services = [
@@ -35,11 +33,7 @@ const services = [
   },
 ]
 
-/*
- * Blue diagonal gradient icon container — navy blue palette, unchanged.
- * Gradient: top-right darker navy (#0a1830) → mid (#0f2044) → bottom-left lighter blue (#1e4fa0).
- */
-function BlueGradientIcon({ Icon }: { Icon: React.ElementType }) {
+function BlueGradientIcon({ Icon }: { Icon: React.ComponentType<{ className?: string }> }) {
   return (
     <div
       className="w-12 h-12 rounded-sm flex items-center justify-center flex-shrink-0"

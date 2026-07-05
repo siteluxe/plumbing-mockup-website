@@ -1,6 +1,3 @@
-'use client'
-
-import Image from 'next/image'
 import { Phone } from 'lucide-react'
 
 export default function HeroSection() {
@@ -63,13 +60,10 @@ export default function HeroSection() {
         {/* Image Column */}
         <div className="relative w-full lg:flex-1 order-2 lg:order-2">
           <div className="relative w-full h-72 sm:h-96 lg:h-full lg:min-h-[90vh]">
-            <Image
+            <img
               src="/images/plumber-work.png"
               alt="Vanguard Plumbing technician repairing pipes on a job in Plano, TX"
-              fill
-              className="object-cover object-top"
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="w-full h-full object-cover object-top"
             />
             {/* 24/7 badge with blue glow */}
             <div

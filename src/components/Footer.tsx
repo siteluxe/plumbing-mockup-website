@@ -1,8 +1,4 @@
-'use client'
-
-import Image from 'next/image'
 import { Phone, MapPin, Clock } from 'lucide-react'
-import Link from 'next/link'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -39,15 +35,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4 lg:col-span-1">
             <div className="flex items-center gap-2">
-              <div className="relative w-12 h-12 flex-shrink-0">
-                <Image
-                  src="/images/vanguard-logo.png"
-                  alt="Vanguard Plumbing logo"
-                  fill
-                  className="object-contain"
-                  sizes="48px"
-                />
-              </div>
+              <img
+                src="/images/vanguard-logo.png"
+                alt="Vanguard Plumbing logo"
+                className="w-12 h-12 object-contain"
+              />
               <div className="leading-tight">
                 <span className="block text-white font-black text-base tracking-tight uppercase leading-none">VANGUARD</span>
                 <span className="block text-[#eb7b46] font-black text-base tracking-tight uppercase leading-none">PLUMBING</span>
@@ -76,12 +68,12 @@ export default function Footer() {
               ))}
               {legalLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
+                  <a
                     href={link.href}
                     className="text-gray-400 hover:text-[#f0a57a] transition-colors text-sm font-medium"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -138,16 +130,15 @@ export default function Footer() {
             <p>&copy; {new Date().getFullYear()} Vanguard Plumbing. All Rights Reserved.</p>
             <div className="flex items-center gap-4">
               {legalLinks.map((link) => (
-                <Link
+                <a
                   key={link.label}
                   href={link.href}
                   className="hover:text-gray-300 transition-colors"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </div>
-            {/* SiteLuxe attribution — rel="nofollow" for SEO, same color as surrounding text */}
             <p>
               <a
                 href="https://siteluxe.netlify.app"

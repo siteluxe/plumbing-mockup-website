@@ -1,6 +1,3 @@
-'use client'
-
-import Image from 'next/image'
 import { ShieldCheck, Clock, Star, Wrench, BadgeCheck, Users } from 'lucide-react'
 
 const reasons = [
@@ -36,12 +33,7 @@ const reasons = [
   },
 ]
 
-/*
- * Orange diagonal gradient icon container.
- * Gradient: top-right darker (#8c3d17) → mid (#eb7b46) → bottom-left lighter (#f0a57a).
- * All icons share the exact same gradient — white icon on top for contrast.
- */
-function OrangeGradientIcon({ Icon }: { Icon: React.ElementType }) {
+function OrangeGradientIcon({ Icon }: { Icon: React.ComponentType<{ className?: string }> }) {
   return (
     <div
       className="flex-shrink-0 w-10 h-10 rounded-sm flex items-center justify-center"
@@ -63,12 +55,10 @@ export default function WhyUsSection() {
           {/* Left: Image */}
           <div className="w-full lg:w-5/12 flex-shrink-0">
             <div className="relative rounded-sm overflow-hidden h-80 sm:h-96 lg:h-[520px] w-full">
-              <Image
+              <img
                 src="/images/hero-plumber.png"
                 alt="Vanguard Plumbing professional plumber ready to serve customers in Plano, TX"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

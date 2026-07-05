@@ -1,18 +1,16 @@
-'use client'
-
-import TopBar from '@/components/TopBar'
-import Navbar from '@/components/Navbar'
-import HeroSection from '@/components/HeroSection'
-import WhyUsSection from '@/components/WhyUsSection'
-import ServicesSection from '@/components/ServicesSection'
-import ServiceAreaSection from '@/components/ServiceAreaSection'
-import ReviewsSection from '@/components/ReviewsSection'
-import ContactSection from '@/components/ContactSection'
-import FAQSection from '@/components/FAQSection'
-import Footer from '@/components/Footer'
+import TopBar from './components/TopBar'
+import Navbar from './components/Navbar'
+import HeroSection from './components/HeroSection'
+import WhyUsSection from './components/WhyUsSection'
+import ServicesSection from './components/ServicesSection'
+import ServiceAreaSection from './components/ServiceAreaSection'
+import ReviewsSection from './components/ReviewsSection'
+import ContactSection from './components/ContactSection'
+import FAQSection from './components/FAQSection'
+import Footer from './components/Footer'
 import { useEffect, useState } from 'react'
 
-export default function Home() {
+export default function App() {
   const [headerHeight, setHeaderHeight] = useState(0)
 
   useEffect(() => {
