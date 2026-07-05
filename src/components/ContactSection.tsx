@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Phone, Clock, MapPin, CheckCircle } from 'lucide-react'
+import { Phone, Clock, MapPin, CircleCheck as CheckCircle } from 'lucide-react'
 
 const problemOptions = [
   'Leaking Pipe or Fixture',

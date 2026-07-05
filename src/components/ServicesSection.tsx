@@ -1,4 +1,4 @@
-import { Droplets, Wrench, Thermometer, FlaskConical, AlertTriangle, ShowerHead } from 'lucide-react'
+import { Droplets, Wrench, Thermometer, FlaskConical, TriangleAlert as AlertTriangle, ShowerHead } from 'lucide-react'
 
 const services = [
   {
