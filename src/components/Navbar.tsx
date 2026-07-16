@@ -7,7 +7,13 @@ const navLinks = [
   { label: 'Contact Us', href: '#contact' },
 ]
 
-export default function Navbar() {
+const standaloneNavLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Contact Us', href: '/#contact' },
+]
+
+export default function Navbar({ isStandalone = false }: { isStandalone?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -19,6 +25,7 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false)
+    if (isStandalone) return
     if (href === '#home') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
@@ -34,6 +41,10 @@ export default function Navbar() {
 
   const handleBookNow = () => {
     setMobileOpen(false)
+    if (isStandalone) {
+      window.location.href = '/#contact'
+      return
+    }
     const el = document.querySelector('#contact')
     if (el) {
       const header = document.getElementById('site-header')
@@ -42,6 +53,8 @@ export default function Navbar() {
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
+
+  const links = isStandalone ? standaloneNavLinks : navLinks
 
   return (
     <header
@@ -53,8 +66,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo — scrolls to absolute top */}
           <a
-            href="#home"
-            onClick={(e) => { e.preventDefault(); handleNavClick('#home') }}
+            href={isStandalone ? '/' : '#home'}
+            onClick={(e) => { if (!isStandalone) { e.preventDefault(); handleNavClick('#home') } }}
             className="flex-shrink-0 flex items-center gap-2"
             aria-label="Vanguard Plumbing home"
           >
@@ -75,11 +88,11 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-            {navLinks.map((link) => (
+            {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
+                onClick={(e) => { if (!isStandalone) { e.preventDefault(); handleNavClick(link.href) } }}
                 className="text-[#0f2044] font-semibold text-sm tracking-wide uppercase hover:text-[#E67527] transition-colors"
               >
                 {link.label}
@@ -137,11 +150,11 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
           <nav className="flex flex-col px-4 py-4 gap-1" aria-label="Mobile navigation">
-            {navLinks.map((link) => (
+            {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                onClick={(e) => { e.preventDefault(); handleNavClick(link.href) }}
+                onClick={(e) => { if (!isStandalone) { e.preventDefault(); handleNavClick(link.href) } }}
                 className="text-[#0f2044] font-semibold text-base py-3 px-2 border-b border-gray-100 uppercase tracking-wide hover:text-[#E67527] transition-colors"
               >
                 {link.label}

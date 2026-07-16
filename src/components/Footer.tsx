@@ -6,12 +6,18 @@ const navLinks = [
   { label: 'Contact Us', href: '#contact' },
 ]
 
+const standaloneNavLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Contact Us', href: '/#contact' },
+]
+
 const legalLinks = [
   { label: 'Terms of Service', href: '/terms' },
   { label: 'Privacy Policy', href: '/privacy' },
 ]
 
-export default function Footer() {
+export default function Footer({ isStandalone = false }: { isStandalone?: boolean }) {
   const handleScrollTo = (href: string) => {
     if (href === '#home') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -27,6 +33,8 @@ export default function Footer() {
       }
     }
   }
+
+  const links = isStandalone ? standaloneNavLinks : navLinks
 
   return (
     <footer className="w-full bg-[#0a1830] text-white overflow-x-hidden" aria-label="Site footer">
@@ -55,11 +63,11 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-black uppercase tracking-wider text-sm mb-5">Navigation</h3>
             <ul className="flex flex-col gap-3">
-              {navLinks.map((link) => (
+              {links.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    onClick={(e) => { e.preventDefault(); handleScrollTo(link.href) }}
+                    onClick={(e) => { if (!isStandalone) { e.preventDefault(); handleScrollTo(link.href) } }}
                     className="text-gray-400 hover:text-[#f0a57a] transition-colors text-sm font-medium"
                   >
                     {link.label}

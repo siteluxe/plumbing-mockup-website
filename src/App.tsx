@@ -8,9 +8,30 @@ import ReviewsSection from './components/ReviewsSection'
 import ContactSection from './components/ContactSection'
 import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
+import ServicesPage from './pages/ServicesPage'
+import ContactPage from './pages/ContactPage'
 import { useEffect, useState } from 'react'
 
+function usePathname() {
+  const [pathname, setPathname] = useState(() => window.location.pathname)
+  useEffect(() => {
+    const onPop = () => setPathname(window.location.pathname)
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+  return pathname
+}
+
 export default function App() {
+  const pathname = usePathname()
+
+  if (pathname === '/services') return <ServicesPage />
+  if (pathname === '/contact') return <ContactPage />
+
+  return <HomePage />
+}
+
+function HomePage() {
   const [headerHeight, setHeaderHeight] = useState(0)
 
   useEffect(() => {
