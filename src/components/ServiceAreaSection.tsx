@@ -83,9 +83,9 @@ export default function ServiceAreaSection() {
                 shadow-[0_0_12px_rgba(235,123,70,0.35)] hover:bg-[#8c3d17]
                 hover:shadow-[0_0_22px_rgba(235,123,70,0.6)] hover:-translate-y-0.5
                 active:translate-y-0 transition-all duration-200 inline-flex items-center gap-2"
-              aria-label="View all service areas and contact us"
+              aria-label="Check availability in your area and contact us"
             >
-              View All Service Areas &rarr;
+              Check Availability &rarr;
             </button>
           </div>
         </div>
